@@ -30,6 +30,13 @@
 **/
 
 var massAssignFilter = function(obj, keysArray, isWhiteList) {
+  if (Object.prototype.toString.call(obj) !== '[object Object]') {
+    throw new TypeError('The first param need be an Object');
+  }
+
+  if (Object.prototype.toString.call(keysArray) !== '[object Array]') {
+    throw new TypeError('The second param need be an Array');
+  }
 
   var objKeys = Object.keys(obj);
 

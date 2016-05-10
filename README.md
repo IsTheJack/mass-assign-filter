@@ -21,7 +21,7 @@ Example 1:
     const whiteList = ['name', 'age'];
     console.log(massAssign(person, whitelist));
     // => { name: "Roberto", age: 22 }
-``` 
+```
 
 Example 2 (White List):
 ```javascript
@@ -47,6 +47,7 @@ Example 2 (White List):
       };
     };
 ```
+
 Example 3 (Black List):
 ```javascript
     // With Black List
@@ -64,11 +65,11 @@ Example 3 (Black List):
     
         create(req, res) {
           const blackList = ['admin'];
-          Person.create(massAssign(req.body, blackList), (err, question) => {
+          Person.create(massAssign(req.body, blackList, false), (err, question) => {
             if (err) res.status(400).json(err);
             else res.status(201).json(question);
           });
         },
       };
     };
-    ```
+```
