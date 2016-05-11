@@ -55,4 +55,27 @@ describe('#mass-assign-test', function() {
       assert.deepEqual(massAssign(person, whiteList, false), expected);
     });
   });
+
+  describe('#Errors', function() {
+    it('Not pass object in first param and throw TypeError', function() {
+      assert.throws(
+        function() { massAssign(1, ['test'], true) },
+        TypeError
+      );
+    });
+
+    it('Not pass array in second param and throw TypeError', function() {
+      assert.throws(
+        function() { massAssign({}, '', true) },
+        TypeError
+      );
+    });
+
+    it('Not pass param and throw TypeError', function() {
+      assert.throws(
+        function() { massAssign() },
+        TypeError
+      );
+    });
+  });
 });
