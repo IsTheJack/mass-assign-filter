@@ -30,6 +30,7 @@
 **/
 
 var massAssignFilter = function(obj, keysArray, isWhiteList) {
+  // Input Validations
   if (Object.prototype.toString.call(obj) !== '[object Object]') {
     throw new TypeError('The first param need be an Object');
   }
@@ -49,15 +50,18 @@ var massAssignFilter = function(obj, keysArray, isWhiteList) {
     });
   }
 
+  var filterFunction;
   if (isWhiteList) {
-    var whiteKeys = objKeys.filter(function(x) {
+    filterFunction = function(x) {
       return hasKey(x);
-    });
+    };
   } else {
-    var whiteKeys = objKeys.filter(function(x) {
+    filterFunction = function(x) {
       return !hasKey(x);
-    });
+    };
   }
+
+  var whiteKeys = objKeys.filter(filterFunction);
 
   return whiteKeys.reduce(function(acc, x) {
     acc[x] = obj[x];

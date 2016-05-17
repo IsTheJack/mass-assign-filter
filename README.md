@@ -1,7 +1,13 @@
 # mass-assign-filter Helper Module
 A helper module for Node.js that sanitize objects based in the white list array.
 
-Example 1:
+# Install
+    npm install --save mass-assign-filter
+
+# Test (Uses Mocha globaly)
+    npm test
+
+# Example 1:
 ```javascript
     const massAssign = require('mass-assign-filter');
     // massAssign(object, array[, isWhiteList = true]);
@@ -23,7 +29,7 @@ Example 1:
     // => { name: "Roberto", age: 22 }
 ```
 
-Example 2 (White List):
+# Example 2 (White List):
 ```javascript
     // With White List
     const mongoose = require('mongoose');
@@ -48,7 +54,7 @@ Example 2 (White List):
     };
 ```
 
-Example 3 (Black List):
+# Example 3 (Black List):
 ```javascript
     // With Black List
     
