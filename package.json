@@ -1,6 +1,6 @@
 {
   "name": "mass-assign-filter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A helper module for Node.js that sanitize objects based in the white list array",
   "main": "mass-assign-filter.js",
   "scripts": {
