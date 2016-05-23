@@ -48,18 +48,11 @@ var massAssignFilter = function(obj, keysArray, isWhiteList) {
       return keysArray.some(function(y) {
       return y === x;
     });
-  }
+  };
 
-  var filterFunction;
-  if (isWhiteList) {
-    filterFunction = function(x) {
-      return hasKey(x);
-    };
-  } else {
-    filterFunction = function(x) {
-      return !hasKey(x);
-    };
-  }
+  var filterFunction = function(x) {
+    return isWhiteList? hasKey(x): !hasKey(x);
+  };
 
   var whiteKeys = objKeys.filter(filterFunction);
 

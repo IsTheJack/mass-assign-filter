@@ -78,4 +78,21 @@ describe('#mass-assign-test', function() {
       );
     });
   });
+
+  describe('#Immutability', function() {
+    it('Must create a new object reference', function() {
+      var person = {
+        name: "Roberto",
+        email: "robertooliveira.dev@gmail.com",
+        admin: true,
+      };
+
+      var whiteList = ['name', 'email'];
+
+      var otherObj = massAssign(person, whiteList);
+      otherObj.name = "Ricardo";
+
+      assert.notEqual(person.name, otherObj.name);
+    });
+  });
 });
